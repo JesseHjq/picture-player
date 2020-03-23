@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "allowSyntheticDefaultImports": true,
+        "lib": ["dom", "es2015", "es5", "scripthost"],
+        "target": "es6",
+        "module": "es2015",
+        "moduleResolution": "node",
+        "noImplicitAny": false,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "preserveConstEnums": true,
+        "sourceMap": false,
+        "experimentalDecorators": true,
+        "baseUrl": "./",
+        "jsx": "preserve"
+    },
+    "exclude": ["node_modules"],
+    "include": ["./src", "./global.d.ts"]
+}
