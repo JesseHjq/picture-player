@@ -1,6 +1,6 @@
 {
     "name": "picture-player",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "",
     "main": "./dist/index.js",
     "scripts": {
@@ -12,6 +12,7 @@
         "type": "git",
         "url": "git@github.com:JesseHjq/picture-player.git"
     },
+    "typings": "index.d.ts",
     "author": "JesseHuang",
     "license": "ISC",
     "devDependencies": {
