@@ -1,8 +1,8 @@
 {
     "name": "picture-player",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "",
-    "main": "index.js",
+    "main": "./dist/index.js",
     "scripts": {
         "start": "webpack-dev-server --config config/webpack.dev.config.js",
         "build": "webpack --config config/webpack.prod.config.js",
