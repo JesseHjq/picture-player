@@ -8,23 +8,23 @@ react | typescript
 
 <b>fade in and out<b>
 
-![Alt Text](./example/static/fadein.gif)
+![Alt Text](https://github.com/JesseHjq/picture-player/tree/master/example/static/fadein.gif)
 
 <b>many circle<b>
 
-![Alt Text](./example/static/circle.gif)
+![Alt Text](https://github.com/JesseHjq/picture-player/tree/master/example/static/circle.gif)
 
 <b>diamond<b>
 
-![Alt Text](./example/static/diamond.gif)
+![Alt Text](https://github.com/JesseHjq/picture-player/tree/master/example/static/diamond.gif)
 
 <b>cut in and out<b>
 
-![Alt Text](./example/static/cutin.gif)
+![Alt Text](https://github.com/JesseHjq/picture-player/tree/master/example/static/cutin.gif)
 
 <b>shutter<b>
 
-![Alt Text](./example/static/shutter.gif)
+![Alt Text](https://github.com/JesseHjq/picture-player/tree/master/example/static/shutter.gif)
 
 many more motion style is coming, please look forward to;
 
