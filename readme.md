@@ -8,19 +8,19 @@ react | typescript
 
 <b>fade in and out<b>
 
-![Alt Text](https://github.com/JesseHjq/picture-player/tree/master/example/static/fadein.gif)
+![Alt Text](./example/static/fadein.gif)
 
 <b>many circle<b>
 
-![Alt Text](https://github.com/JesseHjq/picture-player/tree/master/example/static/circle.gif)
+![Alt Text](./example/static/circle.gif)
 
 <b>diamond<b>
 
-![Alt Text](https://github.com/JesseHjq/picture-player/tree/master/example/static/diamond.gif)
+![Alt Text](./example/static/diamond.gif)
 
 <b>cut in and out<b>
 
-![Alt Text](https://github.com/JesseHjq/picture-player/tree/master/example/static/cutin.gif)
+![Alt Text](./example/static/cutin.gif)
 
 <b>shutter<b>
 
