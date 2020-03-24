@@ -24,7 +24,7 @@ react | typescript
 
 <b>shutter<b>
 
-![Alt Text](https://github.com/JesseHjq/picture-player/tree/master/example/static/shutter.gif)
+![Alt Text](./example/static/shutter.gif)
 
 many more motion style is coming, please look forward to;
 
