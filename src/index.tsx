@@ -2,14 +2,9 @@ import React, { PureComponent } from "react";
 import "./picture-player.less";
 import { loadOneImage, newTransitionsList } from "./utils";
 import PictureItem from "./pictureItem";
+import { PicturePlayerProps } from "./types";
 
-interface IProps {
-    imagesList: string[];
-    timeInterval?: number;
-    feedbackIndex?: (index) => {};
-}
-
-export default class Component extends PureComponent<IProps> {
+export default class Component extends PureComponent<PicturePlayerProps> {
     static defaultProps = {
         timeInterval: 5000
     };
@@ -18,15 +13,20 @@ export default class Component extends PureComponent<IProps> {
     state = {
         imageObjList: [],
         runningIndex: -1,
-        transitionsList: [...newTransitionsList(this.props.imageList.length)]
+        transitionsList: [
+            ...newTransitionsList(
+                this.props.imagesList.length,
+                this.props.transitionsStyle
+            )
+        ]
     };
 
     loadImageObj = async () => {
-        const { imageList } = this.props;
+        const { imagesList } = this.props;
 
-        for (let i = 0; i < imageList.length; i++) {
+        for (let i = 0; i < imagesList.length; i++) {
             try {
-                let imageObj = await loadOneImage(imageList[i]);
+                let imageObj = await loadOneImage(imagesList[i]);
                 this.setState({
                     imageObjList: [...this.state.imageObjList, imageObj]
                 });
@@ -52,10 +52,13 @@ export default class Component extends PureComponent<IProps> {
 
             setInterval(() => {
                 let nextIndex = this.state.runningIndex + 1;
-                if (nextIndex === this.props.imageList.length) {
+                if (nextIndex === this.props.imagesList.length) {
                     this.setState({
                         transitionsList: [
-                            ...newTransitionsList(this.props.imageList.length)
+                            ...newTransitionsList(
+                                this.props.imagesList.length,
+                                this.props.transitionsStyle
+                            )
                         ]
                     });
                     nextIndex = 0;
@@ -76,11 +79,11 @@ export default class Component extends PureComponent<IProps> {
     }
     render() {
         const { imageObjList, runningIndex, transitionsList } = this.state;
-        const { imageList } = this.props;
+        const { imagesList } = this.props;
 
         return (
             <div styleName="wrapper">
-                {imageList.map((item, index) => (
+                {imagesList.map((item, index) => (
                     <PictureItem
                         key={index}
                         imageUrl={item}
@@ -89,7 +92,7 @@ export default class Component extends PureComponent<IProps> {
                         appear={runningIndex === index}
                         appearType={transitionsList[index]}
                         disappearType={
-                            index + 1 === imageList.length
+                            index + 1 === imagesList.length
                                 ? transitionsList[0]
                                 : transitionsList[index + 1]
                         }

@@ -28,10 +28,6 @@ react | typescript
 
 many more motion style is coming, please look forward to;
 
-### Explanation
-
-Above five style will randomly used in component, will consider open options in the future
-
 ### Install
 
     npm install --save picture-player
@@ -55,3 +51,8 @@ Above five style will randomly used in component, will consider open options in 
 *   feedbackIndex
 
     function, player go next will run this function, send newest index to this function
+
+*   transitionsStyle
+
+    transitions style, keyof "fadeIn" "cutInFromRight" "cutInFromBottom" "shutter" "flowersCircle" "diamond"
+    default null(will random selection above five style)

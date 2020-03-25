@@ -1,10 +1,8 @@
 import * as React from "react";
+import { PicturePlayerProps } from "./src/types";
 
-interface Iprops {
-    imagesList: string[];
-    timeInterval?: number;
-    feedbackIndex?: (index) => {};
-}
-declare class PicturePlayer extends React.Component<Iprops> {}
+export default class PicturePlayer extends React.Component<
+    PicturePlayerProps
+> {}
 
-export default PicturePlayer;
+export { pictureTransitionsStyle } from "./src/types";

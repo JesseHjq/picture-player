@@ -6,3 +6,10 @@ export enum pictureTransitionsStyle {
     "flowersCircle" = "flowersCircle", //百圆齐放
     "diamond" = "diamond" //菱形效果
 }
+
+export interface PicturePlayerProps {
+    imagesList: string[];
+    timeInterval?: number;
+    feedbackIndex?: (index) => {};
+    transitionsStyle?: keyof typeof pictureTransitionsStyle;
+}

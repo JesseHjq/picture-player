@@ -18,19 +18,27 @@ export function loadOneImage(url) {
     return promise;
 }
 
-export function newTransitionsList(toast: number) {
+export function newTransitionsList<
+    T extends keyof typeof pictureTransitionsStyle
+>(toast: number, transitionsStyle: T) {
     let list = [];
 
     for (let i = 0; i < toast; i++) {
-        let chooseIndex = Math.floor(
-            Math.random() * Object.keys(pictureTransitionsStyle).length
-        );
+        let type: T;
+        if (transitionsStyle) {
+            type = transitionsStyle;
+        } else {
+            let chooseIndex = Math.floor(
+                Math.random() * Object.keys(pictureTransitionsStyle).length
+            );
 
-        list.push(
-            pictureTransitionsStyle[
-                Object.keys(pictureTransitionsStyle)[chooseIndex]
-            ]
-        );
+            type =
+                pictureTransitionsStyle[
+                    Object.keys(pictureTransitionsStyle)[chooseIndex]
+                ];
+        }
+
+        list.push(type);
     }
 
     return list;
