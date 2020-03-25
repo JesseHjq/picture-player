@@ -10,6 +10,6 @@ export enum pictureTransitionsStyle {
 export interface PicturePlayerProps {
     imagesList: string[];
     timeInterval?: number;
-    feedbackIndex?: (index) => void;
+    feedbackIndex?: (index: number) => void;
     transitionsStyle?: keyof typeof pictureTransitionsStyle;
 }
