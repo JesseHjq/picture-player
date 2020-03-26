@@ -9,6 +9,7 @@ export default class Component extends PureComponent<PicturePlayerProps> {
         timeInterval: 5000
     };
     isStartPolling = false;
+    interval = null;
 
     state = {
         imageObjList: [],
@@ -48,9 +49,12 @@ export default class Component extends PureComponent<PicturePlayerProps> {
                 this.setState({
                     runningIndex: 0
                 });
+                if (this.props.feedbackIndex) {
+                    this.props.feedbackIndex(0);
+                }
             }
 
-            setInterval(() => {
+            this.interval = setInterval(() => {
                 let nextIndex = this.state.runningIndex + 1;
                 if (nextIndex === this.props.imagesList.length) {
                     this.setState({
@@ -74,8 +78,37 @@ export default class Component extends PureComponent<PicturePlayerProps> {
         }
     };
 
+    reset = () => {
+        clearInterval(this.interval);
+        this.setState(
+            {
+                imageObjList: [],
+                runningIndex: -1,
+                transitionsList: [
+                    ...newTransitionsList(
+                        this.props.imagesList.length,
+                        this.props.transitionsStyle
+                    )
+                ]
+            },
+            () => {
+                this.loadImageObj();
+            }
+        );
+    };
+
+    componentDidUpdate(Preprops) {
+        if (
+            Preprops.imagesList.toString() !== this.props.imagesList.toString()
+        ) {
+            this.reset();
+        }
+    }
+
     componentDidMount() {
-        this.loadImageObj();
+        if (this.props.imagesList.length > 0) {
+            this.loadImageObj();
+        }
     }
     render() {
         const { imageObjList, runningIndex, transitionsList } = this.state;
