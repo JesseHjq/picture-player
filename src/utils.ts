@@ -25,17 +25,20 @@ export function newTransitionsList<
 
     for (let i = 0; i < toast; i++) {
         let type: T;
-        if (transitionsStyle) {
+        if (transitionsStyle && typeof transitionsStyle === "string") {
             type = transitionsStyle;
         } else {
-            let chooseIndex = Math.floor(
-                Math.random() * Object.keys(pictureTransitionsStyle).length
-            );
+            let chooseArr: any;
 
-            type =
-                pictureTransitionsStyle[
-                    Object.keys(pictureTransitionsStyle)[chooseIndex]
-                ];
+            if (transitionsStyle) {
+                chooseArr = transitionsStyle;
+            } else {
+                chooseArr = Object.values(pictureTransitionsStyle);
+            }
+
+            let chooseIndex = Math.floor(Math.random() * chooseArr.length);
+
+            type = pictureTransitionsStyle[chooseArr[chooseIndex]];
         }
 
         list.push(type);

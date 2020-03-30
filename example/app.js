@@ -12,7 +12,7 @@ const App = () => (
             "https://sjbz-fd.zol-img.com.cn/t_s320x510c5/g2/M00/0D/02/ChMlWl5pqtWIAeMzAA3w6d7ofvUAANp_gAAEvkADfEB495.jpg",
             "https://sjbz-fd.zol-img.com.cn/t_s320x510c5/g2/M00/0E/03/ChMlWV5wMUmIbjhjAAsEjVv7hfgAANuJAOp9qoACwSl539.jpg"
         ]}
-        transitionsStyle="fadeIn"
+        transitionsStyle={["fadeIn", "flowersCircle"]}
     />
 );
 render(<App />, document.getElementById("root"));
