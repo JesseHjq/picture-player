@@ -11,6 +11,7 @@ export interface PicturePlayerProps {
     imagesList: string[];
     timeInterval?: number;
     feedbackIndex?: (index: number) => void;
-    transitionsStyle?: keyof typeof pictureTransitionsStyle &
-        (keyof typeof pictureTransitionsStyle)[];
+    transitionsStyle?:
+        | keyof typeof pictureTransitionsStyle
+        | (keyof typeof pictureTransitionsStyle)[];
 }

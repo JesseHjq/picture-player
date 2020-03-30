@@ -19,8 +19,9 @@ export function loadOneImage(url) {
 }
 
 export function newTransitionsList<
-    T extends keyof typeof pictureTransitionsStyle &
-        (keyof typeof pictureTransitionsStyle)[]
+    T extends
+        | keyof typeof pictureTransitionsStyle
+        | (keyof typeof pictureTransitionsStyle)[]
 >(toast: number, transitionsStyle: T) {
     let list = [];
 
@@ -29,7 +30,7 @@ export function newTransitionsList<
         if (transitionsStyle && typeof transitionsStyle === "string") {
             type = transitionsStyle;
         } else {
-            let chooseArr: string[];
+            let chooseArr: any;
 
             if (transitionsStyle) {
                 chooseArr = transitionsStyle;
