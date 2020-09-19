@@ -2,13 +2,10 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
     top: 0;
     left: 0;
     opacity: 1;
-    z-index: 10;
+    overflow: hidden;
 
     &.hide {
         visibility: hidden;
@@ -20,43 +17,48 @@
 
     &.diamond_show {
         visibility: visible;
-        animation: diamond_show 1s forwards;
+        clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
+        animation: diamond_show forwards;
     }
 
     &.fadeIn_show {
         visibility: visible;
-        animation: fadeIn_show 1s forwards;
+        opacity: 0;
+        animation: fadeIn_show forwards 1s;
     }
 
     &.fadeIn_hide {
-        animation: opacity_hide 1s forwards;
+        animation: opacity_hide forwards 1s;
     }
 
     &.cutInFromTop_show {
         visibility: visible;
-        animation: cutInFromTop_show 1s forwards;
+        transform: translateY(-50%);
+        animation: cutInFromTop_show forwards 1s;
     }
 
     &.cutInFromTop_hide {
-        animation: cutInFromTop_hide 1s forwards;
+        animation: cutInFromTop_hide forwards 1s;
     }
 
     &.cutInFromRight_show {
         visibility: visible;
-        animation: cutInFromRight_show 1s forwards;
+        transform: translateX(100%);
+        animation: cutInFromRight_show forwards 1s;
     }
 
     &.cutInFromRight_hide {
-        animation: cutInFromRight_hide 1s forwards;
+        animation: cutInFromRight_hide forwards 1s;
     }
 
     &.cutInFromBottom_show {
         visibility: visible;
-        animation: cutInFromBottom_show 1s forwards;
+        transform: translateY(100%);
+        animation: cutInFromBottom_show forwards 1s;
     }
 
     &.cutInFromBottom_hide {
-        animation: cutInFromBottom_hide 1s forwards;
+        animation: cutInFromBottom_hide forwards 1s;
     }
 
     &.shutter_show {
@@ -67,11 +69,11 @@
             transparent calc(1% * var(--seed))
         );
         mask-size: 100px;
-        animation: shutter_flowersCircle_show 1s forwards;
+        animation: shutter_flowersCircle_show forwards;
     }
 
     &.shutter_hide {
-        animation: opacity_hide 1s forwards;
+        animation: opacity_hide forwards;
     }
 
     &.flowersCircle_show {
@@ -81,11 +83,167 @@
             transparent calc(1% * var(--seed))
         );
         mask-size: 100px 100px;
-        animation: shutter_flowersCircle_show 1s forwards;
+        animation: shutter_flowersCircle_show forwards;
     }
 
     &.flowersCircle_hide {
-        animation: opacity_hide 1s forwards;
+        animation: opacity_hide forwards;
+    }
+
+    &.scroll180_show {
+        visibility: visible;
+        opacity: 0;
+        transform: perspective(1200px) rotateX(180deg);
+        animation: scroll180_show forwards 1s;
+    }
+
+    &.scroll180_hide {
+        animation: scroll180_hide forwards 1s;
+    }
+}
+
+.image-box {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &.shapping {
+        transform: scale(1.18) translateY(0%) translateX(0%);
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+        transform-origin: center;
+    }
+
+    &.shapping_top_left {
+        animation-name: shapping_top_left;
+    }
+    &.shapping_top {
+        animation-name: shapping_top;
+    }
+    &.shapping_left {
+        animation-name: shapping_left;
+    }
+    &.shapping_top_right {
+        animation-name: shapping_top_right;
+    }
+    &.shapping_right {
+        animation-name: shapping_right;
+    }
+    &.shapping_bottom_right {
+        animation-name: shapping_bottom_right;
+    }
+    &.shapping_bottom {
+        animation-name: shapping_bottom;
+    }
+    &.shapping_bottom_left {
+        animation-name: shapping_bottom_left;
+    }
+    &.shapping_scale_up {
+        animation-name: shapping_scale_up;
+    }
+    &.shapping_scale_down {
+        animation-name: shapping_scale_down;
+    }
+}
+
+@keyframes shapping_top_left {
+    0% {
+        transform: scale(1.18) translateY(0%) translateX(0%);
+    }
+
+    100% {
+        transform: scale(1.18) translateY(-8%) translateX(-8%);
+    }
+}
+
+@keyframes shapping_top {
+    0% {
+        transform: scale(1.18) translateY(0%) translateX(0%);
+    }
+
+    100% {
+        transform: scale(1.18) translateY(-8%) translateX(0%);
+    }
+}
+
+@keyframes shapping_left {
+    0% {
+        transform: scale(1.18) translateY(0%) translateX(0%);
+    }
+
+    100% {
+        transform: scale(1.18) translateY(0%) translateX(-8%);
+    }
+}
+
+@keyframes shapping_right {
+    0% {
+        transform: scale(1.18) translateY(0%) translateX(0%);
+    }
+
+    100% {
+        transform: scale(1.18) translateY(0%) translateX(8%);
+    }
+}
+
+@keyframes shapping_top_right {
+    0% {
+        transform: scale(1.18) translateY(0%) translateX(0%);
+    }
+
+    100% {
+        transform: scale(1.18) translateY(-8%) translateX(8%);
+    }
+}
+
+@keyframes shapping_bottom_right {
+    0% {
+        transform: scale(1.18) translateY(0%) translateX(0%);
+    }
+
+    100% {
+        transform: scale(1.18) translateY(8%) translateX(8%);
+    }
+}
+
+@keyframes shapping_bottom {
+    0% {
+        transform: scale(1.18) translateY(0%) translateX(0%);
+    }
+
+    100% {
+        transform: scale(1.18) translateY(8%) translateX(0%);
+    }
+}
+
+@keyframes shapping_bottom_left {
+    0% {
+        transform: scale(1.18) translateY(0%) translateX(0%);
+    }
+
+    100% {
+        transform: scale(1.18) translateY(8%) translateX(-8%);
+    }
+}
+
+@keyframes shapping_scale_down {
+    0% {
+        transform: scale(1.18) translateY(0%) translateX(0%);
+    }
+
+    100% {
+        transform: scale(1.06) translateY(0%) translateX(0%);
+    }
+}
+
+@keyframes shapping_scale_up {
+    0% {
+        transform: scale(1.18) translateY(0%) translateX(0%);
+    }
+
+    100% {
+        transform: scale(1.3) translateY(0%) translateX(0%);
     }
 }
 
@@ -118,55 +276,81 @@
 
 @keyframes cutInFromTop_show {
     0% {
-        top: -100%;
+        transform: translateY(-100%);
     }
     100% {
-        top: 0%;
+        transform: translateY(0%);
     }
 }
 
 @keyframes cutInFromTop_hide {
     0% {
-        top: 0%;
+        transform: translateY(0%);
     }
     100% {
-        top: 100%;
+        transform: translateY(100%);
     }
 }
 
 @keyframes cutInFromRight_show {
     0% {
-        left: 100%;
+        transform: translateX(100%);
     }
     100% {
-        left: 0%;
+        transform: translateX(0%);
     }
 }
 
 @keyframes cutInFromRight_hide {
     0% {
-        left: 0%;
+        transform: translateX(0%);
     }
     100% {
-        left: -100%;
+        transform: translateX(-100%);
     }
 }
 
 @keyframes cutInFromBottom_show {
     0% {
-        top: 100%;
+        transform: translateY(100%);
     }
+
     100% {
-        left: 0%;
+        transform: translateY(0%);
     }
 }
 
 @keyframes cutInFromBottom_hide {
     0% {
-        top: 0%;
+        transform: translateY(0%);
     }
+
     100% {
-        top: -100%;
+        transform: translateY(-100%);
+    }
+}
+
+@keyframes scroll180_show {
+    0% {
+        opacity: 0;
+        transform: perspective(1200px) rotateX(180deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: perspective(1200px) rotateX(0deg);
+    }
+}
+
+@keyframes scroll180_hide {
+    0% {
+        opacity: 1;
+        transform: perspective(1200px) rotateX(0deg);
+    }
+
+    100% {
+        opacity: 0;
+        transform: perspective(1200px) rotateX(-180deg);
     }
 }
 

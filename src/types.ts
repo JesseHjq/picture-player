@@ -4,7 +4,13 @@ export enum pictureTransitionsStyle {
     "cutInFromBottom" = "cutInFromBottom", //从底部切入
     "shutter" = "shutter", //百叶窗
     "flowersCircle" = "flowersCircle", //百圆齐放
-    "diamond" = "diamond" //菱形效果
+    "diamond" = "diamond", //菱形效果
+    "scroll180" = "scroll180", //反转180
+}
+
+export enum ImageSizeType {
+    "contain" = "contain",
+    "cover" = "cover",
 }
 
 export interface PicturePlayerProps {
@@ -14,4 +20,6 @@ export interface PicturePlayerProps {
     transitionsStyle?:
         | keyof typeof pictureTransitionsStyle
         | (keyof typeof pictureTransitionsStyle)[];
+    imageSize?: keyof typeof ImageSizeType;
+    screensaverMode?: boolean;
 }

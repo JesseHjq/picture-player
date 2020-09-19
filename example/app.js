@@ -4,15 +4,25 @@ import ReactDemo from "../src"; // 引入组件
 import "./app.less";
 
 const App = () => (
+    // <div
+    //     style={{
+    //         width: 1600,
+    //         height: 500,
+    //         border: "1px solid #2c3144",
+    //         margin: "100px auto",
+    //     }}
+    // >
     <ReactDemo
         imagesList={[
-            "https://images.pexels.com/photos/994883/pexels-photo-994883.jpeg?auto=compress&crop=bottom&cs=tinysrgb&fit=crop&h=350.0&sharp=10&w=1400",
-            "https://s0.seewo.com/www-seewo-com/Uploads/Banner/original_img/5e79b9bf9a2cc.jpg",
-            "https://desk-fd.zol-img.com.cn/t_s960x600c5/g2/M00/0F/0E/ChMlWV55dlOIaGQ0AAp-Dkp7pn4AAN05gBiz7UACn4m118.jpg",
-            "https://sjbz-fd.zol-img.com.cn/t_s320x510c5/g2/M00/0D/02/ChMlWl5pqtWIAeMzAA3w6d7ofvUAANp_gAAEvkADfEB495.jpg",
-            "https://sjbz-fd.zol-img.com.cn/t_s320x510c5/g2/M00/0E/03/ChMlWV5wMUmIbjhjAAsEjVv7hfgAANuJAOp9qoACwSl539.jpg"
+            "https://images.pexels.com/photos/1809340/pexels-photo-1809340.jpeg?cs=srgb&dl=pexels-ylanite-koppens-1809340.jpg&fm=jpg",
+            "https://images.pexels.com/photos/35208/office-home-glasses-workspace.jpg?cs=srgb&dl=pexels-pixabay-35208.jpg&fm=jpg",
+            "https://images.pexels.com/photos/115655/pexels-photo-115655.jpeg?cs=srgb&dl=pexels-lee-campbell-115655.jpg&fm=jpg",
         ]}
-        transitionsStyle={["fadeIn", "flowersCircle"]}
+        transitionsStyle={["scroll180", "fadeIn"]}
+        imageSize="cover"
+        timeInterval={15000}
+        screensaverMode={true}
     />
+    // </div>
 );
 render(<App />, document.getElementById("root"));

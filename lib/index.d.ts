@@ -5,4 +5,4 @@ export default class PicturePlayer extends React.Component<
     PicturePlayerProps
 > {}
 
-export { pictureTransitionsStyle } from "../src/types";
+export { pictureTransitionsStyle, ImageSizeType } from "../src/types";
