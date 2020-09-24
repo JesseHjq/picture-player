@@ -59,9 +59,20 @@ export default class PictureItem extends PureComponent<IProps> {
     };
 
     hideImage = () => {
-        this.setState({
-            styleType: this.props.disappearType + "_hide",
-        });
+        const { screensaverMode } = this.props;
+        this.setState(
+            {
+                styleType: this.props.disappearType + "_hide",
+            },
+            () => {
+                screensaverMode &&
+                    setTimeout(() => {
+                        this.setState({
+                            screensaverType: "",
+                        });
+                    }, 1500);
+            }
+        );
     };
 
     componentDidUpdate(preProps) {
