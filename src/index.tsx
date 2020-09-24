@@ -19,7 +19,8 @@ export default class Component extends PureComponent<PicturePlayerProps> {
         transitionsList: [
             ...newTransitionsList(
                 this.props.imagesList.length,
-                this.props.transitionsStyle
+                this.props.transitionsStyle,
+                this.props.transitionCustomList
             ),
         ],
     };
@@ -64,7 +65,8 @@ export default class Component extends PureComponent<PicturePlayerProps> {
                             transitionsList: [
                                 ...newTransitionsList(
                                     this.props.imagesList.length,
-                                    this.props.transitionsStyle
+                                    this.props.transitionsStyle,
+                                    this.props.transitionCustomList
                                 ),
                             ],
                         });
@@ -94,7 +96,8 @@ export default class Component extends PureComponent<PicturePlayerProps> {
                 transitionsList: [
                     ...newTransitionsList(
                         this.props.imagesList.length,
-                        this.props.transitionsStyle
+                        this.props.transitionsStyle,
+                        this.props.transitionCustomList
                     ),
                 ],
             },

@@ -22,4 +22,5 @@ export interface PicturePlayerProps {
         | (keyof typeof pictureTransitionsStyle)[];
     imageSize?: keyof typeof ImageSizeType;
     screensaverMode?: boolean;
+    transitionCustomList?: number[];
 }

@@ -22,6 +22,7 @@ const App = () => (
         imageSize="cover"
         timeInterval={15000}
         screensaverMode={true}
+        transitionCustomList={[1, 1, 0]}
     />
     // </div>
 );

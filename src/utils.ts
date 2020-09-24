@@ -22,24 +22,31 @@ export function newTransitionsList<
     T extends
         | keyof typeof pictureTransitionsStyle
         | (keyof typeof pictureTransitionsStyle)[]
->(toast: number, transitionsStyle: T) {
+>(toast: number, transitionsStyle: T, transitionsCustomList) {
     let list = [];
 
     for (let i = 0; i < toast; i++) {
         let type: T;
+        let chooseArr: any;
         if (transitionsStyle && typeof transitionsStyle === "string") {
             type = transitionsStyle;
         } else {
-            let chooseArr: any;
-
             if (transitionsStyle) {
                 chooseArr = transitionsStyle;
             } else {
                 chooseArr = Object.values(pictureTransitionsStyle);
             }
+            let chooseIndex = 0;
 
-            let chooseIndex = Math.floor(Math.random() * chooseArr.length);
-
+            if (
+                transitionsCustomList &&
+                transitionsCustomList[i] &&
+                transitionsCustomList[i] < chooseArr.length
+            ) {
+                chooseIndex = transitionsCustomList[i];
+            } else {
+                chooseIndex = Math.floor(Math.random() * chooseArr.length);
+            }
             type = pictureTransitionsStyle[chooseArr[chooseIndex]];
         }
 
